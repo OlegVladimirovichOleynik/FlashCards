@@ -1,0 +1,21 @@
+
+
+<table class="table">
+ 	<div class="panel panel-default">
+
+  	<div class="panel-heading"><h4>Все карточки</h4>
+   		<tr>
+   	 		<td>Оригинальный текст</td>
+   	 		<td>Перевод</td>
+   	 		<td>Дата добавления</td>
+    	</tr>
+		</div>
+  	<% @cards.each do |cards| %>
+  		<tr>
+  		  <td><%= cards.original_text %></td>
+   		  <td><%= cards.translated_text %></td>
+  		  <td><%= cards.review_date.strftime("%d.%m.%Y") %></td>
+  		</tr>
+ 		 <% end %>
+	</div>
+</table>
