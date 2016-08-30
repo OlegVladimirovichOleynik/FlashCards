@@ -1,0 +1,27 @@
+# This is the configuration used to check the rubocop source code.
+
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'tmp/**/*'
+    - Rakefile
+    - Gemfile
+    - db/schema.rb
+
+Metrics/LineLength:
+  Max: 130
+
+Style/NumericLiterals:
+  MinDigits: 15
+
+Style/Documentation:
+  Enabled: false
+
+StringLiterals:
+  Enabled: false
+
+Style/AlignHash:
+  Enabled: false
