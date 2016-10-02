@@ -12,7 +12,13 @@
       	</ul>
     </div>
   <% end %>
-  <%= f.input :original_text %><br>
-  <%= f.input :translated_text %><br>
-  <%= f.button :submit %>
+  <%= f.input :original_text, label: 'Original text:', 
+                                  as: :string, 
+                                  required: false, 
+                                  placeholder: 'Enter original text' %>
+  <%= f.input :translated_text, label: 'Translated text:', 
+                                    as: :string, 
+                                    required: false, 
+                                    placeholder: 'Enter translated text' %>
+  <%= f.button :submit %> 
 <% end %>
