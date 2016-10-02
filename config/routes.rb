@@ -3,6 +3,5 @@ Rails.application.routes.draw do
 
   get 'new' => 'cards#new'
 
-  
   root 'home#index'
 end

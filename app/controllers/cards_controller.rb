@@ -4,15 +4,15 @@ class CardsController < ApplicationController
   end
 
   def show
-    @cards = Card.find(params[:id])    
+    @cards = Card.find(params[:id])
   end
-  
+
   def new
     @cards = Card.new
   end
 
   def edit
-    @cards = Card.find(params[:id])   
+    @cards = Card.find(params[:id])
   end
 
   def create
@@ -20,31 +20,31 @@ class CardsController < ApplicationController
 
     if @cards.save
       redirect_to @cards
-    else 
+    else
       render 'new'
     end
   end
 
   def update
     @cards = Card.find(params[:id])
-    
+
     if @cards.update(cards_params)
       redirect_to @cards
     else
       render 'edit'
-    end    
+    end
   end
 
   def destroy
-    @cards = Card.find(params[:id])   
+    @cards = Card.find(params[:id])
     @cards.destroy
 
-    redirect_to cards_path 
+    redirect_to cards_path
   end
 
-private 
+  private
+
   def cards_params
     params.require(:card).permit(:original_text, :translated_text)
   end
-
 end
