@@ -1,0 +1,27 @@
+<table class="table">
+ 	<div class="panel panel-default">
+
+  	<div class="panel-heading"><h4><%= @cards.original_text %></h4>
+   		<tr>
+   	 		<td><b>Оригинальный текст</td>
+   	 		<td><b>Перевод</td>
+   	 		<td><b>Дата добавления</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    	</tr>
+		</div>
+  		<tr>
+  		  <td><%= @cards.original_text %></td>
+   		  <td><%= @cards.translated_text %></td>
+  		  <td><%= @cards.created_at.strftime("%d.%m.%Y") %></td>
+        <td>  </td>
+        <td><%= link_to 'Редактировать', edit_card_path(@cards) %></td> 
+        <td><%= link_to 'Удалить', card_path(@cards),
+                method: :delete,
+                data: { confirm: 'Вы уверены, что хотите удалить?' } %></td>   
+  		</tr>
+	</div>
+</table>
+
+
