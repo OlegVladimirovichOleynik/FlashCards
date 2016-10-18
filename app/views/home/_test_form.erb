@@ -1,0 +1,10 @@
+<%= simple_form_for :card , url: { action: 'simple_test', controller: 'cards' } do |f| %>
+  <%= f.label @cards.translated_text, required: false, as: :text %>
+  <%= f.input_field :original_text, required: false, 
+                                 placeholder: 'Enter original text' %><br>      
+    <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+  <%= hidden_field_tag 'id', @cards.id %>
+  <%= f.button :submit, 'Проверить'%> 
+<% end %>
