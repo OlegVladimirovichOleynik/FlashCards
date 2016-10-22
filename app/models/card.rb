@@ -5,11 +5,14 @@ class Card < ApplicationRecord
   scope :rand_cards, -> { where('created_at <= ?', Date.today).order('RANDOM()').first }
 
   validates :original_text, exclusion: { in: :translated_text,
-                                    message: "is reserved."}
+                                    message: "is reserved." }
 
   validates :original_text, :translated_text, presence: true,
-                                              uniqueness: true,
-                                              confirmation: { case_sensitive: false }
+                                              uniqueness: { case_sensitive: false },
+                                              confirmation: true
+  def check_translation(text)
+    original_text.strip.eql?(text.strip.downcase.titleize)
+  end
 
   def update_date
     update(created_at: 3.days.from_now)
