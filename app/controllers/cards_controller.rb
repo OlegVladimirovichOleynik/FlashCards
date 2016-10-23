@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-before_action :find_cards, only: [:edit, :update, :destroy, :show, :simple_test]
+  before_action :find_cards, only: [:edit, :update, :destroy, :show, :simple_test]
 
   def index
     @cards = Card.all
@@ -38,13 +38,13 @@ before_action :find_cards, only: [:edit, :update, :destroy, :show, :simple_test]
     redirect_to cards_path
   end
 
-  def simple_test 
-    if @cards.original_text.strip.eql?(cards_params[:original_text])
+  def simple_test
+    if @cards.check_translation(cards_params[:original_text])
       @cards.update_date
-      flash[:notice] = 'yes'
+      flash[:notice] = 'Perfect!'
     else
-      flash[:notice] = 'lol'
-    end 
+      flash[:notice] = 'Try again!'
+    end
     redirect_to root_url
   end
 
@@ -55,7 +55,6 @@ before_action :find_cards, only: [:edit, :update, :destroy, :show, :simple_test]
   end
 
   def find_cards
-    @cards = Card.find(params[:id])    
+    @cards = Card.find(params[:id])
   end
-
 end
