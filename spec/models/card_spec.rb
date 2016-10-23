@@ -7,7 +7,7 @@ describe Card do
   end
 
   it 'entered the correct text with spaces and register' do
-    expect(card.check_translation('     LaMoDa')).to be true
+    expect(card.check_translation('     BaLaBoL')).to be true
   end
 
 end
