@@ -3,4 +3,7 @@ rvm:
   - 2.2.3
   - jruby
   - rbx-2
-script: "bundle exec rake test"
+env:
+  - DB=postgres
+  
+script: "bundle exec rake spec"
