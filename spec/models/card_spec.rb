@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 describe Card do
   let(:card) { FactoryGirl.create(:card) }
   it 'entered the wrong text' do
@@ -7,7 +6,7 @@ describe Card do
   end
 
   it 'entered the correct text with spaces and register' do
-    expect(card.check_translation('     BaLaBoL')).to be true
+    expect(card.check_translation('     wtf')).to be true
   end
 
 end

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :card do
-    original_text 'balaboL'
-    translated_text 'балабол'
+    original_text 'WTF'
+    translated_text 'ВТФ'
   end
 end

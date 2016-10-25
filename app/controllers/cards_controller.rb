@@ -43,7 +43,7 @@ class CardsController < ApplicationController
       @cards.update_date
       flash[:notice] = 'Perfect!'
     else
-      flash[:notice] = 'Try again!'
+      flash[:notice] = 'The correct translation: ' + @cards.original_text + '. Please, try again!'
     end
     redirect_to root_url
   end
