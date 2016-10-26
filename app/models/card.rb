@@ -1,11 +1,14 @@
 class Card < ApplicationRecord
-  before_validation :normalize_name, on: [:create, :edit, :update] do
-    self.created_at = Date.today.next_day(3)
-  end
-  scope :rand_cards, -> { where('created_at <= ?', Date.today).order('RANDOM()').first }
 
-  validates :original_text, exclusion: { in: :translated_text,
-                                    message: "is reserved." }
+  before_validation :normalize_name, on: [:create, :edit, :update]
+
+  before_create do
+    self.review_date = 3.days.from_now
+  end
+
+  scope :rand_cards, -> { where('review_date <= ?', Date.today).order('RANDOM()') }
+
+  validates :original_text, exclusion: { in: :translated_text, message: "is reserved." }
 
   validates :original_text, :translated_text, presence: true,
                                               uniqueness: { case_sensitive: false },
@@ -14,8 +17,8 @@ class Card < ApplicationRecord
     original_text.strip.eql?(text.strip.downcase.titleize)
   end
 
-  def update_date
-    update(created_at: 3.days.from_now)
+  def update_review_date
+    update(review_date: 3.days.from_now)
   end
 
   protected

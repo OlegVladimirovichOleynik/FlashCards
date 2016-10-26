@@ -10,15 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_160_822_101_104) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+ActiveRecord::Schema.define(version: 20160822101104) do
 
-  create_table 'cards', force: :cascade do |t|
-    t.text     'original_text'
-    t.text     'translated_text'
-    t.date     'review_date'
-    t.datetime 'created_at',      null: false
-    t.datetime 'updated_at',      null: false
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "cards", force: :cascade do |t|
+    t.text     "original_text"
+    t.text     "translated_text"
+    t.date     "review_date"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
+
 end
