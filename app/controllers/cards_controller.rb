@@ -40,10 +40,10 @@ class CardsController < ApplicationController
 
   def simple_test
     if @cards.check_translation(cards_params[:original_text])
-      @cards.update_date
       flash[:notice] = 'Perfect!'
+      @cards.update_review_date
     else
-      flash[:notice] = 'The correct translation: ' + @cards.original_text + '. Please, try again!'
+      flash[:error] = "The correct translation: #{@cards.original_text}. Please, try again!"
     end
     redirect_to root_url
   end
