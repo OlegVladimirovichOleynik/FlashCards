@@ -8,6 +8,5 @@ Rails.application.routes.draw do
   end
 
   get 'new' => 'cards#new'
-  get 'user' => 'user#index'
   root 'home#index'
 end
