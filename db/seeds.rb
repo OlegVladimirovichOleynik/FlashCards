@@ -9,5 +9,6 @@ doc = Nokogiri::HTML(html)
 doc.css("tr").each do |tr|
   original_text = tr.css("td:nth-child(4)").text
   translated_text = tr.css("td:nth-child(6)").text.encode("ISO-8859-1")
-  Card.create(original_text: original_text, translated_text: translated_text)
+  user_id = 1
+  Card.create(original_text: original_text, translated_text: translated_text, user_id: user_id)
 end

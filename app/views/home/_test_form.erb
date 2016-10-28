@@ -1,7 +1,7 @@
 <% if @card %>
   <%= simple_form_for :card , url: { action: 'simple_test', controller: 'cards' } do |f| %>
     <%= f.label @card.translated_text, required: false, as: :text %>
-    <%= f.input_field :original_text, required: false, placeholder: 'Enter original text' %><br>
+    <%= f.input_field :original_text, required: false, placeholder: 'Enter original text', value: nil %><br>
     <%= hidden_field_tag 'id', @card.id %>
     <%= f.button :submit, 'Проверить', class: 'btn btn-default' %>
   <% end %>

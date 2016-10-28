@@ -1,6 +1,7 @@
 require 'rails_helper'
 describe Card do
-  let(:card) { FactoryGirl.create(:card) }
+  let(:user) {create(:user) }
+  let!(:card) { create :card, user: user }
   it 'entered the wrong text' do
     expect(card.check_translation('Nothing')).to be false
   end

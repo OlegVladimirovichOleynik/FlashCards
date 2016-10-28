@@ -3,7 +3,11 @@ Rails.application.routes.draw do
     post 'simple_test', on: :collection
   end
 
-  get 'new' => 'cards#new'
+  resources :user do
+  resources :cards
+  end
 
+  get 'new' => 'cards#new'
+  get 'user' => 'user#index'
   root 'home#index'
 end

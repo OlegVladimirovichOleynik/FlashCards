@@ -1,5 +1,5 @@
 class Card < ApplicationRecord
-
+  belongs_to :user
   before_validation :normalize_name, on: [:create, :edit, :update]
 
   before_create do
