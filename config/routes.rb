@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :user do
   resources :cards
   end
-
-  get 'new' => 'cards#new'
+  
   root 'home#index'
 end
