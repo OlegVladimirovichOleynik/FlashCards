@@ -1,6 +1,5 @@
 # README
 [![Build Status](https://travis-ci.org/OlegVladimirovichOleynik/flashcards.svg?branch=master)](https://travis-ci.org/OlegVladimirovichOleynik/flashcards)
-
 [![Code Climate](https://codeclimate.com/github/OlegVladimirovichOleynik/flashcards/badges/gpa.svg)](https://codeclimate.com/github/OlegVladimirovichOleynik/flashcards)
 
 This README would normally document whatever steps are necessary to get the
