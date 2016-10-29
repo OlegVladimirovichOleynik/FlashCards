@@ -1,26 +1,18 @@
-# README
+# Flashcards
 [![Build Status](https://travis-ci.org/OlegVladimirovichOleynik/flashcards.svg?branch=master)](https://travis-ci.org/OlegVladimirovichOleynik/flashcards)
 [![Code Climate](https://codeclimate.com/github/OlegVladimirovichOleynik/flashcards/badges/gpa.svg)](https://codeclimate.com/github/OlegVladimirovichOleynik/flashcards)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### This is a simple app for learning English language
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+* `git clone github.com/OlegVladimirovichOleynik/flashcards.git`
+* `bundle install`
+* `cp config/database.ci.yml config/database.yml`
+* `rake db:setup`
+* `rake db:seed`
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Tech
+* Ruby on Rails 5
+* Ruby 2.2
+* Ansible for provisioning
