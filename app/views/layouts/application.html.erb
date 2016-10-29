@@ -15,14 +15,15 @@
     <ul class="navigation-links nav nav-tabs " role="tablist">
     	<li  class="active"><h4><%= link_to "Флэшкарточкер", '/' %></h4></li>
       <li><h4><%= link_to "Все карточки", '/cards' %></h4></li>
-      <li><h4><%= link_to "Добавить карточку", '/new' %></h4></li>
+      <li><h4><%= link_to "Все пользователи", '/user' %></h4></li>
+      <li><h4><%= link_to "Добавить карточку", new_card_path %></h4></li>
     </ul>
-  </nav> 
+  </nav>
   </header>
   <div class="container">
-    <%= yield %>    
+    <%= yield %>
   </div>
-  
+
 
 </body>
 

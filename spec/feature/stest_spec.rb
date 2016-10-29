@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe 'Card', type: :feature do
-  let!(:card) { create(:card) }
-
+  let(:user) {create(:user) }
+  let!(:card) { create :card, user: user }
   before do
     card.update(review_date: Date.today)
   end
