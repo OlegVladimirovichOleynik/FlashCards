@@ -103,8 +103,8 @@ Rails.application.config.sorcery.configure do |config|
   # config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
   # config.twitter.user_info_mapping = {:email => "screen_name"}
   #
-  config.facebook.key = "675677142601033"
-  config.facebook.secret = "ab7f0b05ca76fb601ad3eaa77c710aa4"
+  config.facebook.key = ENV['FACEBOOK_KEY_ID']
+  config.facebook.secret = ENV['FACEBOOK_SECRET']
   config.facebook.callback_url = "http://localhost:3000/oauth/callback?provider=facebook"
   config.facebook.user_info_mapping = { email: "email" }
   config.facebook.scope = "email"
@@ -122,8 +122,8 @@ Rails.application.config.sorcery.configure do |config|
   # config.google.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=google"
   # config.google.user_info_mapping = {:email => "email", :username => "name"}
   #
-  config.vk.key = "5701047"
-  config.vk.secret = "ZGxeWdwWhq64toD0EMzD"
+  config.vk.key = ENV['VK_KEY_ID']
+  config.vk.secret = ENV['VK_SECRET']
   config.vk.callback_url = "http://localhost:3000/oauth/callback?provider=vk"
   config.vk.user_info_mapping = { email: "email" }
   #

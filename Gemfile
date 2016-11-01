@@ -42,6 +42,8 @@ group :test do
   gem 'capybara'
 end
 
+  gem 'dotenv-rails', :groups => [:development, :test]
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
