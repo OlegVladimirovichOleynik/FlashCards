@@ -1,0 +1,20 @@
+<table class="table">
+ 	<div class="panel panel-default">
+
+  	<div class="panel-heading"><h4><%= @users.email %></h4>
+   		<tr>
+   	 		<td><b>Email</td>
+        <td></td>
+        <td></td>
+    	</tr>
+		</div>
+  		<tr>
+  		  <td><%= @users.email %></td>
+        <td>  </td>
+        <td><%= link_to 'Редактировать', edit_user_path(@users) %><br>
+            <%= link_to 'Удалить', user_path(@users),
+                method: :delete,
+                data: { confirm: 'Вы уверены, что хотите удалить?' } %></td>
+  		</tr>
+	</div>
+</table>

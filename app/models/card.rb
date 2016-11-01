@@ -11,7 +11,7 @@ class Card < ApplicationRecord
   validates :original_text, exclusion: { in: :translated_text, message: "is reserved." }
 
   validates :original_text, :translated_text, presence: true,
-                                              uniqueness: { case_sensitive: false },
+                                              uniqueness: { scope: :user_id },
                                               confirmation: true
   def check_translation(text)
     original_text.strip.eql?(text.strip.downcase.titleize)

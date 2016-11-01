@@ -1,0 +1,15 @@
+<%= simple_form_for @users do |f| %>
+  <% if @users.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @users.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  Email: <%= f.input_field :email, placeholder: 'Enter your email' %>
+  Password: <%= f.password_field :password, placeholder: 'Enter your password' %>
+  <%= f.button :submit, class: 'btn btn-default'%>
+<% end %>

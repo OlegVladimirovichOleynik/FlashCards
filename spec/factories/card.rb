@@ -8,5 +8,4 @@ FactoryGirl.define do
     email 'oleg@gmail.com'
     password 'password'
   end
-
 end

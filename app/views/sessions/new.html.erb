@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h4>Войти</h4>
+	</div>
+</div>
+<%= form_tag sessions_path do %>
+  <div class="field">
+    <%= label_tag :email %>
+    <%= text_field_tag :email, params[:email] %>
+  </div>
+  <div class="field">
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </div>
+  <%= submit_tag "Войти", class: 'btn btn-default' %>
+<% end %>
+<h4>или через социальные сети</h4>
+<%= link_to image_tag("facebook.png", :border => 0, :alt => '', :width => 30, :height => 30, :title => ''), auth_at_provider_path(:provider => :facebook) %>
+<%= link_to image_tag("VK.png", :border => 0, :alt => '', :width => 30, :height => 30, :title => ''), auth_at_provider_path(:provider => :vk) %>

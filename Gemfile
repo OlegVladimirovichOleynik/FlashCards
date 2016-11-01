@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem "sorcery"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -39,6 +41,8 @@ group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
 end
+
+  gem 'dotenv-rails', :groups => [:development, :test]
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
