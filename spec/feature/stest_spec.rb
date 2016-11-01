@@ -45,5 +45,4 @@ describe 'Card', type: :feature do
   it 'entered the correct text with spaces and register' do
     expect(card.check_translation('     wtf')).to be true
   end
-
 end

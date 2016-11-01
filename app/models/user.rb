@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :cards, dependent: :destroy
-  has_many :authentications, :dependent => :destroy
+  has_many :authentications, dependent: :destroy
   before_validation :normalize_email, on: [:create, :edit, :update]
 
   authenticates_with_sorcery! do |config|
@@ -15,6 +15,7 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
 
   private
+
   def normalize_email
     self.email = email.strip.downcase
   end

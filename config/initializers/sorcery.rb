@@ -66,7 +66,7 @@ Rails.application.config.sorcery.configure do |config|
   # What providers are supported by this app, i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce] .
   # Default: `[]`
   #
-   config.external_providers = [:facebook, :vk]
+  config.external_providers = [:facebook, :vk]
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
   # Path to ca_file. By default use a internal ca-bundle.crt.
@@ -103,14 +103,14 @@ Rails.application.config.sorcery.configure do |config|
   # config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
   # config.twitter.user_info_mapping = {:email => "screen_name"}
   #
-   config.facebook.key = "675677142601033"
-   config.facebook.secret = "ab7f0b05ca76fb601ad3eaa77c710aa4"
-   config.facebook.callback_url = "http://localhost:3000/oauth/callback?provider=facebook"
-   config.facebook.user_info_mapping = {:email => "email"}
-   config.facebook.scope = "email"
-   #config.facebook.access_permissions = ["email"]
-   config.facebook.display = "page"
-   config.facebook.api_version = "v2.8"
+  config.facebook.key = "675677142601033"
+  config.facebook.secret = "ab7f0b05ca76fb601ad3eaa77c710aa4"
+  config.facebook.callback_url = "http://localhost:3000/oauth/callback?provider=facebook"
+  config.facebook.user_info_mapping = { email: "email" }
+  config.facebook.scope = "email"
+  # config.facebook.access_permissions = ["email"]
+  config.facebook.display = "page"
+  config.facebook.api_version = "v2.8"
   #
   # config.github.key = ""
   # config.github.secret = ""
@@ -122,10 +122,10 @@ Rails.application.config.sorcery.configure do |config|
   # config.google.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=google"
   # config.google.user_info_mapping = {:email => "email", :username => "name"}
   #
-   config.vk.key = "5701047"
-   config.vk.secret = "ZGxeWdwWhq64toD0EMzD"
-   config.vk.callback_url = "http://localhost:3000/oauth/callback?provider=vk"
-   config.vk.user_info_mapping = {:email => "email"}
+  config.vk.key = "5701047"
+  config.vk.secret = "ZGxeWdwWhq64toD0EMzD"
+  config.vk.callback_url = "http://localhost:3000/oauth/callback?provider=vk"
+  config.vk.user_info_mapping = { email: "email" }
   #
   # To use liveid in development mode you have to replace mydomain.com with
   # a valid domain even in development. To use a valid domain in development
@@ -388,22 +388,22 @@ Rails.application.config.sorcery.configure do |config|
     # Class which holds the various external provider data for this user.
     # Default: `nil`
     #
-     user.authentications_class = Authentication
+    user.authentications_class = Authentication
 
     # User's identifier in authentications class.
     # Default: `:user_id`
     #
-    #user.authentications_user_id_attribute_name = :user_id
+    # user.authentications_user_id_attribute_name = :user_id
 
     # Provider's identifier in authentications class.
     # Default: `:provider`
     #
-    #user.provider_attribute_name = :provider
+    # user.provider_attribute_name = :provider
 
     # User's external unique identifier in authentications class.
     # Default: `:uid`
     #
-    #user.provider_uid_attribute_name = :uid
+    # user.provider_uid_attribute_name = :uid
   end
 
   # This line must come after the 'user config' block.

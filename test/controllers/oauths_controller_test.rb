@@ -10,5 +10,4 @@ class OauthsControllerTest < ActionDispatch::IntegrationTest
     get oauths_callback_url
     assert_response :success
   end
-
 end
