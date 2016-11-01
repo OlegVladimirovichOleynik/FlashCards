@@ -1,8 +1,12 @@
 require 'rails_helper'
 
 describe 'Card', type: :feature do
-  let(:user) {create(:user) }
+  let(:user) { create(:user) }
   let!(:card) { create :card, user: user }
+
+  before(:each) do
+    login("oleg@gmail.com", "password")
+  end
   before do
     card.update(review_date: Date.today)
   end
@@ -23,4 +27,23 @@ describe 'Card', type: :feature do
     card.reload
     expect(card.review_date).to eq Date.today
   end
+
+  it 'registration and automatic login' do
+    visit root_path
+    click_link "Выйти"
+    click_link "Регистрация"
+    fill_in 'user_email', with: 'new_email'
+    fill_in 'user_password', with: 'new_password'
+    click_button 'Create User'
+    expect(page).to have_content 'Вы вошли как: '
+  end
+
+  it 'entered the wrong text' do
+    expect(card.check_translation('Nothing')).to be false
+  end
+
+  it 'entered the correct text with spaces and register' do
+    expect(card.check_translation('     wtf')).to be true
+  end
+
 end

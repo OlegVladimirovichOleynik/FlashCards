@@ -2,21 +2,21 @@ class CardsController < ApplicationController
   before_action :find_cards, only: [:edit, :update, :destroy, :show, :simple_test]
 
   def index
-    @cards = Card.all
+    @cards = current_user.cards.all
   end
 
   def show
   end
 
   def new
-    @cards = Card.new
+    @cards = current_user.cards.new
   end
 
   def edit
   end
 
   def create
-    @cards = Card.new(cards_params)
+    @cards = current_user.cards.build(cards_params)
     if @cards.save
       redirect_to @cards
     else
@@ -55,6 +55,6 @@ class CardsController < ApplicationController
   end
 
   def find_cards
-    @cards = Card.find(params[:id])
+    @cards = current_user.cards.find(params[:id])
   end
 end
