@@ -1,4 +1,4 @@
-<%= simple_form_for @cards do |f| %>
+<%= simple_form_for @cards, :html => {:multipart => true} do |f| %>
   <% if @cards.errors.any? %>
     <div id="error_explanation">
       <h3>
@@ -20,5 +20,6 @@
                                    as: :string,
                              required: false,
                           placeholder: 'Enter translated text' %>
+  <%= f.file_field :avatar %>
   <%= f.button :submit, class: 'btn btn-default'%>
   <% end %>
