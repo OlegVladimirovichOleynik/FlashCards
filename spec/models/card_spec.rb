@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'carrierwave/test/matchers'
 describe Card do
   let(:user) { create(:user) }
   let!(:card) { create :card, user: user }

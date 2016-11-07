@@ -23,3 +23,6 @@
   		</tr>
 	</div>
 </table>
+<% if @cards.avatar_url %>
+  <%= image_tag @cards.avatar_url %><br>
+<% end %>
