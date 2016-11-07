@@ -4,7 +4,7 @@ class Card < ApplicationRecord
   before_validation :normalize_name, on: [:create, :edit, :update]
 
   before_create do
-    self.review_date = 0.days.from_now
+    self.review_date = 3.days.from_now
   end
 
   scope :rand_cards, -> { where('review_date <= ?', Date.today).order('RANDOM()') }
