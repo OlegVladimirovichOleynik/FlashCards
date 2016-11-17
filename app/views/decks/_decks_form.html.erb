@@ -1,0 +1,7 @@
+<%= simple_form_for @decks do |f| %>
+  <%= f.input :name, label: 'Name decks: ',
+                                 as: :string,
+                           required: false,
+                        placeholder: 'Enter name decks' %>
+  <%= f.button :submit, class: 'btn btn-default'%>
+  <% end %>

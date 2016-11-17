@@ -1,0 +1,40 @@
+<table class="table">
+ 	<div class="panel panel-default">
+
+    <div class="panel-heading"><h4> Колода: <%= @decks.name %></h4>
+   		<tr>
+        <td><b>Колода</td>
+   	 		<td><b>Оригинальный текст</td>
+   	 		<td><b>Перевод</td>
+   	 		<td><b>Дата добавления</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    	</tr>
+		</div>
+      <tr>
+        <td><%= @decks.name %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+        <% @decks.cards.each do |cards| %>
+          <tr>
+            <td></td>
+            <td><%= cards.original_text %></td>
+            <td><%= cards.translated_text %></td>
+            <td><%= cards.review_date.strftime("%d.%m.%Y") %></td>
+            <td><%= link_to 'Показать', card_path(cards) %></td>
+            <td><%= link_to 'Редактировать', edit_card_path(cards) %></td>
+            <td><%= link_to 'Удалить', card_path(cards),
+                    method: :delete,
+                    data: { confirm: 'Вы уверены, что хотите удалить?' } %></td>
+
+          </tr>
+        <% end %>
+
+	</div>
+</table>

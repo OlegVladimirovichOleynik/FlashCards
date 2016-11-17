@@ -1,7 +1,13 @@
 class User < ApplicationRecord
   has_many :cards, dependent: :destroy
+  has_many :decks, dependent: :destroy
   has_many :authentications, dependent: :destroy
+  belongs_to :current_deck, class_name: "Deck", foreign_key: "current_deck_id"
   before_validation :normalize_email, on: [:create, :edit, :update]
+
+  def current_deck_test
+    current_deck ? current_deck.cards.rand_cards : cards.rand_cards
+  end
 
   authenticates_with_sorcery! do |config|
     config.authentications_class = Authentication

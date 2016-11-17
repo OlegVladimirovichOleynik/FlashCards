@@ -16,11 +16,22 @@
     	<li  class="active"><h4><%= link_to "Флэшкарточкер", root_path %></h4></li>
 
       <% if current_user %>
-        <li><h4><%= link_to "Все карточки", cards_path %></h4></li>
-        <li><h4><%= link_to "Добавить карточку", new_card_path %></h4></li>
+      <li class="dropdown">
+      <h4><a class="dropdown-toggle" data-toggle="dropdown" href="Колоды">Колоды</a>
+        <ul class="dropdown-menu">
+          <li><h5><%= link_to "Все колоды", decks_path %></h5></li>
+          <li><h5><%= link_to "Добавить колоду", new_deck_path %></h5></li>
+        </ul>
+      </li></h4>
+      <li class="dropdown">
+      <h4><a class="dropdown-toggle" data-toggle="dropdown" href="Карточки">Карточки</a>
+        <ul class="dropdown-menu">
+          <li><h5><%= link_to "Все карточки", cards_path %></h5></li>
+          <li><h5><%= link_to "Добавить карточку", new_card_path %></h5></li>
+        </ul>
+      </li></h4>
         <li><h4><%= link_to "Выйти", logout_path %></h4></li>
         <li><h4>Вы вошли как: <%= link_to current_user.email, user_path(current_user) %></h4></li>
-
       <% else %>
         <li><h4><%= link_to "Регистрация", new_user_path %></h4></li>
         <li><h4><%= link_to "Войти", new_session_path %></h4></li>

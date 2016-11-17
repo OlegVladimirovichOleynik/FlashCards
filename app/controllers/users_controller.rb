@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_users, only: [:edit, :show, :update, :destroy]
+  before_action :find_users, only: [:edit, :show, :update, :destroy, :current_deck]
 
   def index
     @users = User.all
@@ -36,6 +36,11 @@ class UsersController < ApplicationController
   def destroy
     @users.destroy
     redirect_to root_path
+  end
+
+  def current_deck
+    @users.update_attribute(:current_deck_id, params[:id])
+    redirect_to decks_path
   end
 
   private

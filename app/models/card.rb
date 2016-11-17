@@ -1,5 +1,6 @@
 class Card < ApplicationRecord
   belongs_to :user
+  belongs_to :decks
   mount_uploader :avatar, AvatarUploader
   before_validation :normalize_name, on: [:create, :edit, :update]
 
@@ -7,9 +8,11 @@ class Card < ApplicationRecord
     self.review_date = 3.days.from_now
   end
 
-  scope :rand_cards, -> { where('review_date <= ?', Date.today).order('RANDOM()') }
+  scope :rand_cards, -> { where('review_date <= ?', Date.today).order('RANDOM()')}
 
   validates :original_text, exclusion: { in: :translated_text, message: "is reserved." }
+
+  validates :deck_id, presence: true
 
   validates :original_text, :translated_text, presence: true,
                                               uniqueness: { scope: :user_id },
