@@ -2,7 +2,8 @@ require 'rails_helper'
 
 describe 'Card', type: :feature do
   let(:user) { create(:user) }
-  let!(:card) { create :card, user: user }
+  let!(:deck) { create :deck, user: user }
+  let!(:card) { create :card, user: user, deck_id: deck.id }
 
   before(:each) do
     login("oleg@gmail.com", "password")

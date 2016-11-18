@@ -4,15 +4,18 @@
   	<div class="panel-heading"><h4><%= @users.email %></h4>
    		<tr>
    	 		<td><b>Email</td>
-        <td></td>
-        <td></td>
+        <td><b>Текущая колода</td>
     	</tr>
 		</div>
   		<tr>
   		  <td><%= @users.email %></td>
-        <td>  </td>
-        <td><%= link_to 'Редактировать', edit_user_path(@users) %><br>
-            <%= link_to 'Удалить', user_path(@users),
+        <% @users.decks.each do |decks| %>
+        <% if current_user.current_deck_id == decks.id %>
+        <td><%= decks.name %></td>
+        <% end %>
+        <% end %>
+        <td><%= link_to 'Редактировать', edit_user_path(@users) %></td>
+        <td><%= link_to 'Удалить', user_path(@users),
                 method: :delete,
                 data: { confirm: 'Вы уверены, что хотите удалить?' } %></td>
   		</tr>
