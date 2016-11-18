@@ -2,8 +2,8 @@ FactoryGirl.define do
   factory :card do
     original_text 'WTF'
     translated_text 'ВТФ'
-    User
-    Deck
+    user
+    deck
   end
 
   factory :user do
@@ -13,7 +13,6 @@ FactoryGirl.define do
 
   factory :deck do
     name 'deckname'
-    User
+    user
   end
-
 end

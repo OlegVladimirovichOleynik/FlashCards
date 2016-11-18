@@ -8,7 +8,7 @@ class Card < ApplicationRecord
     self.review_date = 3.days.from_now
   end
 
-  scope :rand_cards, -> { where('review_date <= ?', Date.today).order('RANDOM()')}
+  scope :rand_cards, -> { where('review_date <= ?', Date.today).order('RANDOM()') }
 
   validates :original_text, exclusion: { in: :translated_text, message: "is reserved." }
 

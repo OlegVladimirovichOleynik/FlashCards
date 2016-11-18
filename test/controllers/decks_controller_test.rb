@@ -20,5 +20,4 @@ class DecksControllerTest < ActionDispatch::IntegrationTest
     get decks_index_url
     assert_response :success
   end
-
 end

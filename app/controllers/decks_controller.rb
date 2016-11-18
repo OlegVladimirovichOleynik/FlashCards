@@ -36,7 +36,7 @@ class DecksController < ApplicationController
 
   def show
   end
-  
+
   private
 
   def find_decks
