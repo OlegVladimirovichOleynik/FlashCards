@@ -41,9 +41,10 @@ class CardsController < ApplicationController
   def simple_test
     if @cards.check_translation(cards_params[:original_text])
       flash[:notice] = 'Perfect!'
-      @cards.update_review_date
+      @cards.inc_repeat
     else
       flash[:error] = "The correct translation: #{@cards.original_text}. Please, try again!"
+      @cards.dec_repeat
     end
     redirect_to root_url
   end
@@ -51,7 +52,7 @@ class CardsController < ApplicationController
   private
 
   def cards_params
-    params.require(:card).permit(:original_text, :translated_text, :avatar, :deck_id)
+    params.require(:card).permit(:original_text, :translated_text, :review_date, :avatar, :deck_id)
   end
 
   def find_cards
