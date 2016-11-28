@@ -52,4 +52,4 @@ class UsersController < ApplicationController
   def find_users
     @users = User.find(current_user.id)
   end
-  end
+end

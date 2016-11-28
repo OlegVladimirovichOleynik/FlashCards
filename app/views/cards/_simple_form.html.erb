@@ -20,6 +20,9 @@
                                    as: :string,
                              required: false,
                           placeholder: 'Enter translated text' %>
+<% unless @cards.new_record? %>
+  <%= f.input :review_date  %>
+<% end %>
   <%= f.select :deck_id, current_user.decks.all.collect { |p| [ p.name, p.id ] } %>
   <%= f.file_field :avatar %>
   <%= f.button :submit, class: 'btn btn-default'%>
