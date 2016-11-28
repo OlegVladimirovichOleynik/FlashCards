@@ -5,10 +5,10 @@ class Card < ApplicationRecord
   before_validation :normalize_name, on: [:create, :edit, :update]
 
   before_create do
-    self.review_date = 0.hours.from_now
+    self.review_date = Time.current
   end
 
-  scope :rand_cards, -> { where('review_date <= ?', 0.hours.from_now).order('RANDOM()') }
+  scope :rand_cards, -> { where('review_date <= ?', Time.current).order('RANDOM()') }
 
   validates :original_text, exclusion: { in: :translated_text, message: "is reserved." }
 

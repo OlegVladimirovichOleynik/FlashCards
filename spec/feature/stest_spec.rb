@@ -26,7 +26,7 @@ describe 'Card', type: :feature do
     fill_in 'card_original_text', with: 'test'
     click_button 'Проверить'
     card.reload
-    expect(card.review_date) == 0.hours.from_now
+    expect(card.review_date) == Time.current
   end
 
   it 'registration and automatic login' do
