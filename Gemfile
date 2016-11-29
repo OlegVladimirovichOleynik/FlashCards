@@ -33,6 +33,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
 gem "rails_12factor", group: :production
+gem 'levenshtein-ffi', :require => 'levenshtein'
 
 
 group :development, :test do

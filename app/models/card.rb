@@ -21,6 +21,10 @@ class Card < ApplicationRecord
     original_text.strip.eql?(text.strip.downcase.titleize)
   end
 
+  def check_typos(text)
+    Levenshtein.distance(original_text, text.strip.downcase.titleize) == 1
+  end
+
   def inc_repeat
     self.repeat = repeat + 1 if repeat < 5
     repeat_cards
