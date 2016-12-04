@@ -11,11 +11,14 @@ class UsersController < ApplicationController
 
   def create
     @users = User.new(users_params)
-    if @users.save
-      auto_login(@users)
-      redirect_to root_url, notice: "Signed up!"
-    else
-      render :new
+    respond_to do |format|
+      if @users.save
+        UserMailer.welcome_email(@users).deliver_later
+        format.html { redirect_to(@users, notice: "Signed up!") }
+        auto_login(@users)
+      else
+        format.html { render action: 'new' }
+      end
     end
   end
 
