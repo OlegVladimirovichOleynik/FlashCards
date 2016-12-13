@@ -31,11 +31,9 @@ class DecksController < ApplicationController
     redirect_to decks_path
   end
 
-  def edit
-  end
+  def edit; end
 
-  def show
-  end
+  def show; end
 
   private
 

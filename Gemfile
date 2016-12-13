@@ -34,6 +34,7 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem "rails_12factor", group: :production
 gem 'levenshtein-ffi', :require => 'levenshtein'
+gem 'whenever', require: false
 
 
 group :development, :test do
@@ -61,4 +62,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-ruby "2.2.3"
+ruby "2.3.1"

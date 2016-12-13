@@ -5,6 +5,5 @@ class HomeController < ApplicationController
     @card = current_user.current_deck_check if current_user
   end
 
-  def secret
-  end
+  def secret; end
 end

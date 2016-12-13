@@ -9,6 +9,12 @@ class User < ApplicationRecord
     current_deck ? current_deck.cards.rand_cards.first : cards.rand_cards.first
   end
 
+  def self.pending_cards
+    joins(:cards).merge(Card.expired).distinct.find_each do |users|
+      NotificationsMailer.notifications_email(users).deliver
+    end
+  end
+
   authenticates_with_sorcery! do |config|
     config.authentications_class = Authentication
   end

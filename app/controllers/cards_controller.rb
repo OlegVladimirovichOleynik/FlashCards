@@ -5,15 +5,13 @@ class CardsController < ApplicationController
     @cards = current_user.cards.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @cards = current_user.cards.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @cards = current_user.cards.build(cards_params)
