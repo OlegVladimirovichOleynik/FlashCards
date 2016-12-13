@@ -8,7 +8,8 @@ class Card < ApplicationRecord
     self.review_date = Time.current
   end
 
-  scope :rand_cards, -> { where('review_date <= ?', Time.current).order('RANDOM()') }
+  scope :expired, -> { where("review_date <= ?", DateTime.current) }
+  scope :rand_cards, -> { expired.order('RANDOM()') }
 
   validates :original_text, exclusion: { in: :translated_text, message: "is reserved." }
 
