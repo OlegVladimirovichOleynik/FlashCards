@@ -1,9 +1,9 @@
 class NotificationsMailer < ApplicationMailer
-  default from: 'flashcards174@project.com'
+  default from: Rails.application.secrets.email
 
   def notifications_email(user)
     @users = user
-    @url = 'https://flashcards174.herokuapp.com/'
+    @url = Rails.application.secrets.url
     mail(to: @users.email, subject: 'У вас есть непроверенные карточки')
   end
 end
