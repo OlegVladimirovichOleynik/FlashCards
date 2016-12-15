@@ -42,6 +42,8 @@ ru:
   email: "Email"
   password: "Пароль"
 
+  edit_profile: "Редактировать профиль"
+
   date:
     formats:
       default: "%d.%m.%Y"

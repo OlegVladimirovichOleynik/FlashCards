@@ -9,6 +9,7 @@ ru:
         update: "Обновить колоду"
       user:
         create: "Зарегистрироваться"
+        update: "Обновить профиль"
   simple_form:
     labels:
       card:

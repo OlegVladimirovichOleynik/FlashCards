@@ -10,9 +10,10 @@ en:
 
   error: "Typo! The correct translation: %{correct}, your translation: %{your}. Please, try again!"
   error2: "The correct translation: %{correct}. Please, try again!"
+
   logged: "Logged from %{provider}"
   failed: "Failed to login from %{provider}"
-  loged_in: "Logged in!"
+  logged_in: "Logged in!"
   logged_out: "Logged out!"
   logged_error: "Email or password was invalid"
 
@@ -22,15 +23,22 @@ en:
   sign_out: "Sign out"
   social: "or login via social networks"
 
+  all_cards: "All cards"
+  add_cards: "Add card"
   original_text: "Original text"
   translated_text: "Translated text"
   review_date: "Review date"
 
+  all_decks: "All decks"
+  add_deck: "Add deck"
   name: "Deck name "
+  current_deck: "Current deck"
+  make_current: "Make current"
 
   tittle: "Flashcards"
   registration: "Registration"
   cards: "Cards"
   decks: "Decks"
+  password: "Password"
 
   edit_profile: "Edit profile"
