@@ -3,8 +3,8 @@
 
   	<div class="panel-heading"><h4><%= @users.email %></h4>
    		<tr>
-   	 		<td><b>Email</td>
-        <td><b>Текущая колода</td>
+   	 		<td><b><%= t(:email)%></td>
+        <td><b><%= t(:current_deck)%></td>
         <td></td>
         <td></td>
     	</tr>
@@ -17,8 +17,8 @@
         <% end %>
         <% end %>
         <td></td>
-        <td><%= link_to 'Редактировать', edit_user_path(@users) %></td>
-        <td><%= link_to 'Удалить', user_path(@users),
+        <td><%= link_to t(:edit), edit_user_path(@users) %></td>
+        <td><%= link_to t(:delete), user_path(@users),
                 method: :delete,
                 data: { confirm: 'Вы уверены, что хотите удалить?' } %></td>
   		</tr>

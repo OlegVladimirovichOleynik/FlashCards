@@ -1,6 +1,6 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h4>Войти</h4>
+		<h4><%= t(:sign_in) %></h4>
 	</div>
 </div>
 <%= form_tag sessions_path do %>
@@ -12,8 +12,8 @@
     <%= label_tag :password %>
     <%= password_field_tag :password %>
   </div>
-  <%= submit_tag "Войти", class: 'btn btn-default' %>
+  <%= submit_tag (t :sign_in), class: 'btn btn-default' %>
 <% end %>
-<h4>или через социальные сети</h4>
+<h4><%= t(:social)%></h4>
 <%= link_to image_tag("facebook.png", :border => 0, :alt => '', :width => 30, :height => 30, :title => ''), auth_at_provider_path(:provider => :facebook) %>
 <%= link_to image_tag("VK.png", :border => 0, :alt => '', :width => 30, :height => 30, :title => ''), auth_at_provider_path(:provider => :vk) %>

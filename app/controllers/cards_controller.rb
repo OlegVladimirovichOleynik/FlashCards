@@ -38,12 +38,12 @@ class CardsController < ApplicationController
 
   def simple_test
     if @cards.check_translation(cards_params[:original_text])
-      flash[:notice] = 'Perfect!'
+      flash[:notice] = t(:perfect)
       @cards.inc_repeat
     elsif @cards.check_typos(cards_params[:original_text])
-      flash[:error] = "Typo! The correct translation: #{@cards.original_text}, your translation: #{cards_params[:original_text].mb_chars.downcase.titleize}. Please, try again!"
+      flash[:error] = t(:error, correct: @cards.original_text, your: cards_params[:original_text].mb_chars.downcase.titleize)
     else
-      flash[:error] = "The correct translation: #{@cards.original_text}. Please, try again!"
+      flash[:error] = t(:error2, correct: @cards.original_text)
       @cards.dec_repeat
     end
     redirect_to root_url
