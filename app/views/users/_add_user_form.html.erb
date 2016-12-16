@@ -9,7 +9,10 @@
       </ul>
     </div>
   <% end %>
-  Email: <%= f.input_field :email, placeholder: 'Enter your email' %>
-  Password: <%= f.password_field :password, placeholder: 'Enter your password' %>
+  <b><%= t(:email) %></b><%= f.input_field :email %>
+  <b><%= t(:password) %></b><%= f.password_field :password %>
+  <% unless @users.new_record? %>
+    <%= f.input :locale, collection: I18n.available_locales %>
+  <% end%>
   <%= f.button :submit, class: 'btn btn-default'%>
 <% end %>

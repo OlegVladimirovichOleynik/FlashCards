@@ -1,11 +1,11 @@
 <table class="table">
  	<div class="panel panel-default">
 
-  	<div class="panel-heading"><h4>Все карточки</h4>
+  	<div class="panel-heading"><h4><%= t(:all_cards) %></h4>
    		<tr>
-   	 		<td><b>Оригинальный текст</td>
-   	 		<td><b>Перевод</td>
-   	 		<td><b>Дата добавления</td>
+   	 		<td><b><%= t(:original_text) %></td>
+   	 		<td><b><%= t(:translated_text) %></td>
+   	 		<td><b><%= t(:review_date) %></td>
         <td></td>
         <td></td>
         <td></td>
@@ -16,9 +16,9 @@
   		    <td><%= cards.original_text %></td>
    		    <td><%= cards.translated_text %></td>
   		    <td><%= cards.review_date.strftime("%d.%m.%Y") %></td>
-          <td><%= link_to 'Показать', card_path(cards) %></td>
-          <td><%= link_to 'Редактировать', edit_card_path(cards) %></td>
-          <td><%= link_to 'Удалить', card_path(cards),
+          <td><%= link_to t(:show), card_path(cards) %></td>
+          <td><%= link_to t(:edit), edit_card_path(cards) %></td>
+          <td><%= link_to t(:delete), card_path(cards),
                   method: :delete,
                   data: { confirm: 'Вы уверены, что хотите удалить?' } %></td>
   		  </tr>

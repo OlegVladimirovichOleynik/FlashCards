@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @users = User.new(users_params)
     if @users.save
       auto_login(@users)
-      redirect_to root_url, notice: "Signed up!"
+      redirect_to root_url, notice: t(:sign_up)
     else
       render :new
     end
@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 
   def update
     if @users.update(users_params)
+      set_locale
       redirect_to root_path
     else
       render 'edit'
@@ -44,7 +45,7 @@ class UsersController < ApplicationController
   private
 
   def users_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:email, :password, :locale)
   end
 
   def find_users

@@ -9,7 +9,7 @@ describe 'Card', type: :feature do
     login("oleg@gmail.com", "password")
   end
   before do
-    card.update(review_date: Date.today)
+    card.update(review_date: Time.current)
   end
 
   it 'check correct translation' do
@@ -18,7 +18,7 @@ describe 'Card', type: :feature do
     click_button 'Проверить'
     card.reload
     expect(card.review_date) == 12.hours.from_now.to_date
-    expect(page).to have_content 'Perfect!'
+    expect(page).to have_content 'Превосходно!'
   end
 
   it 'check wrong translation' do
@@ -35,7 +35,7 @@ describe 'Card', type: :feature do
     click_link "Регистрация"
     fill_in 'user_email', with: 'new_email'
     fill_in 'user_password', with: 'new_password'
-    click_button 'Create User'
+    click_button 'Зарегистрироваться'
     expect(page).to have_content 'Вы вошли как: '
   end
 
