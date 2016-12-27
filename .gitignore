@@ -7,6 +7,7 @@
 /.env
 /public/uploads
 /public/assets
+/vendor/bundle
 # Ignore bundler config.
 /.bundle
 
