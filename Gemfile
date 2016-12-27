@@ -32,10 +32,14 @@ gem "sorcery"
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'fog', '~> 1.36.0'
 gem "rails_12factor", group: :production
 gem 'levenshtein-ffi', :require => 'levenshtein'
 gem 'whenever', require: false
 gem 'http_accept_language'
+gem 'rollbar'
+gem 'oj', '~> 2.12.14'
+gem 'newrelic_rpm'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
