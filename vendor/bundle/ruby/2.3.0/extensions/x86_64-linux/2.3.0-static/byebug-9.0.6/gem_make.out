@@ -1,0 +1,19 @@
+current directory: /home/oleg/flashcards/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.6/ext/byebug
+/home/oleg/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20161228-11564-jsee35.rb extconf.rb
+creating Makefile
+
+current directory: /home/oleg/flashcards/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.6/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /home/oleg/flashcards/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.6/ext/byebug
+make "DESTDIR="
+compiling byebug.c
+compiling locker.c
+compiling breakpoint.c
+compiling context.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+
+current directory: /home/oleg/flashcards/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.6/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20161228-11564-3617po/byebug

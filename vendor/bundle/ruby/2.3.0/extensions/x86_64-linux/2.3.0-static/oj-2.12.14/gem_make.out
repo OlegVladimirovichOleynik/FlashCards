@@ -1,0 +1,38 @@
+current directory: /home/oleg/flashcards/vendor/bundle/ruby/2.3.0/gems/oj-2.12.14/ext/oj
+/home/oleg/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20161228-11564-1q9e9s9.rb extconf.rb
+>>>>> Creating Makefile for ruby version 2.3.1 on x86_64-linux <<<<<
+creating Makefile
+
+current directory: /home/oleg/flashcards/vendor/bundle/ruby/2.3.0/gems/oj-2.12.14/ext/oj
+make "DESTDIR=" clean
+
+current directory: /home/oleg/flashcards/vendor/bundle/ruby/2.3.0/gems/oj-2.12.14/ext/oj
+make "DESTDIR="
+compiling cache8.c
+compiling resolve.c
+compiling oj.c
+compiling err.c
+compiling strict.c
+compiling circarray.c
+compiling compat.c
+compiling sparse.c
+compiling fast.c
+fast.c: In function ‘parse_json’:
+fast.c:816:5: warning: ‘rb_data_object_alloc’ is deprecated (declared at /home/oleg/.rbenv/versions/2.3.1/include/ruby-2.3.0/ruby/ruby.h:1428): by rb_data_object_wrap [-Wdeprecated-declarations]
+     doc->self = rb_data_object_alloc(clas, doc, 0, free_doc_cb);
+     ^
+compiling hash_test.c
+compiling saj.c
+compiling dump.c
+compiling parse.c
+compiling reader.c
+compiling object.c
+compiling odd.c
+compiling val_stack.c
+compiling scp.c
+compiling hash.c
+linking shared-object oj/oj.so
+
+current directory: /home/oleg/flashcards/vendor/bundle/ruby/2.3.0/gems/oj-2.12.14/ext/oj
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 oj.so ./.gem.20161228-11564-1wh7l2h/oj

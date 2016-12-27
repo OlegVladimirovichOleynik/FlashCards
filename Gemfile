@@ -31,8 +31,8 @@ gem 'simple_form'
 gem "sorcery"
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'fog-aws'
-gem 'fog', '~> 1.36.0'
+gem 'fog', require: 'fog/aws'
+gem 'net-ssh'
 gem "rails_12factor", group: :production
 gem 'levenshtein-ffi', :require => 'levenshtein'
 gem 'whenever', require: false

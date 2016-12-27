@@ -1,0 +1,15 @@
+current directory: /home/oleg/flashcards/vendor/bundle/ruby/2.3.0/gems/levenshtein-ffi-1.1.0/ext/levenshtein
+/home/oleg/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20161228-11564-1i8odqi.rb extconf.rb
+creating Makefile
+
+current directory: /home/oleg/flashcards/vendor/bundle/ruby/2.3.0/gems/levenshtein-ffi-1.1.0/ext/levenshtein
+make "DESTDIR=" clean
+
+current directory: /home/oleg/flashcards/vendor/bundle/ruby/2.3.0/gems/levenshtein-ffi-1.1.0/ext/levenshtein
+make "DESTDIR="
+compiling levenshtein.c
+linking shared-object levenshtein.so
+
+current directory: /home/oleg/flashcards/vendor/bundle/ruby/2.3.0/gems/levenshtein-ffi-1.1.0/ext/levenshtein
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 levenshtein.so ./.gem.20161228-11564-yu7lt4
