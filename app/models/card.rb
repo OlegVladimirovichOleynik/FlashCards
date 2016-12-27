@@ -6,6 +6,7 @@ class Card < ApplicationRecord
 
   before_create do
     self.review_date = Time.current
+    self.repeat = 2
   end
 
   scope :expired, -> { where("review_date <= ?", DateTime.current) }
@@ -20,32 +21,13 @@ class Card < ApplicationRecord
                                               confirmation: true
   def check_translation(text)
     original_text.strip.eql?(text.strip.downcase.titleize)
+    typos = check_typos(text)
+    results = SuperMemo.new.calculation(text, typos, repeat, efactor)
+    update(results)
   end
 
   def check_typos(text)
-    Levenshtein.distance(original_text, text.strip.downcase.titleize) == 1
-  end
-
-  def inc_repeat
-    self.repeat = repeat + 1 if repeat < 5
-    repeat_cards
-  end
-
-  def dec_repeat
-    self.repeat = repeat - 1 if repeat > 0
-    repeat_cards
-  end
-
-  def repeat_cards
-    x = case repeat
-        when 0 then 0
-        when 1 then 12
-        when 2 then 72
-        when 3 then 168
-        when 4 then 336
-        else 720
-        end
-    update(review_date: x.hours.from_now, repeat: repeat)
+    Levenshtein.distance(original_text, text.strip.downcase.titleize)
   end
 
   protected
