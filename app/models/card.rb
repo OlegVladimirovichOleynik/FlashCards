@@ -6,7 +6,6 @@ class Card < ApplicationRecord
 
   before_create do
     self.review_date = Time.current
-    self.repeat = 1
   end
 
   scope :expired, -> { where("review_date <= ?", DateTime.current) }

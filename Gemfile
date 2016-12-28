@@ -29,9 +29,9 @@ gem 'simple_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "sorcery"
-gem 'carrierwave'
+gem 'carrierwave', '0.11.2'
 gem 'mini_magick'
-gem 'fog-aws'
+gem 'fog-aws', '0.13.0'
 gem "rails_12factor", group: :production
 gem 'levenshtein-ffi', :require => 'levenshtein'
 gem 'whenever', require: false
