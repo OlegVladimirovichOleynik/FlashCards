@@ -36,6 +36,7 @@ gem "rails_12factor", group: :production
 gem 'levenshtein-ffi', :require => 'levenshtein'
 gem 'whenever', require: false
 gem 'http_accept_language'
+gem 'rake', '< 11.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
