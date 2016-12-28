@@ -29,13 +29,15 @@ gem 'simple_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "sorcery"
-gem 'carrierwave'
+gem 'carrierwave', '0.11.2'
 gem 'mini_magick'
-gem 'fog-aws'
+gem 'fog-aws', '0.13.0'
 gem "rails_12factor", group: :production
 gem 'levenshtein-ffi', :require => 'levenshtein'
 gem 'whenever', require: false
 gem 'http_accept_language'
+gem 'rake', '< 11.0'
+gem 'rainbow', '2.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
