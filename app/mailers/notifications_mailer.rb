@@ -3,7 +3,8 @@ class NotificationsMailer < ApplicationMailer
 
   def notifications_email(user)
     @users = user
-    @url = Rails.application.secrets.url
-    mail(to: @users.email, subject: 'У вас есть непроверенные карточки')
+    subject = 'У вас есть непроверенные карточки'
+    body = mandrill_template("Cards")
+    send_mail(@users.email, subject, body)
   end
 end
