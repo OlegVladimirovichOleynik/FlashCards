@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   def self.pending_cards
     joins(:cards).merge(Card.expired).distinct.find_each do |users|
-      NotificationsMailer.notifications_email(users).deliver
+      NotificationsMailer.notifications_email(users).deliver_now
     end
   end
 
