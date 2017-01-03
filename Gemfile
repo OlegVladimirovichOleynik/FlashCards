@@ -38,6 +38,11 @@ gem 'whenever', require: false
 gem 'http_accept_language'
 gem 'rake', '< 11.0'
 gem 'rainbow', '2.1.0'
+gem 'rollbar'
+gem 'oj', '~> 2.12.14'
+gem 'newrelic_rpm'
+gem 'mandrill-api', :require => "mandrill"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
