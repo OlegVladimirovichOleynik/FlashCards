@@ -17,8 +17,8 @@
         <% end %>
         <% end %>
         <td></td>
-        <td><%= link_to t(:edit), edit_user_path(@users) %></td>
-        <td><%= link_to t(:delete), user_path(@users),
+        <td><%= link_to t(:edit), edit_dashboard_user_path(@users) %></td>
+        <td><%= link_to t(:delete), dashboard_user_path(@users),
                 method: :delete,
                 data: { confirm: 'Вы уверены, что хотите удалить?' } %></td>
   		</tr>

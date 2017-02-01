@@ -1,0 +1,9 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h4><%= t(:registration)%></h4>
+	</div>
+</div>
+<%= render 'add_user_form'%>
+<h4><%= t(:social)%></h4>
+<%= link_to image_tag("facebook.png", :border => 0, :alt => '', :width => 30, :height => 30, :title => ''), home_auth_at_provider_path(:provider => :facebook) %>
+<%= link_to image_tag("VK.png", :border => 0, :alt => '', :width => 30, :height => 30, :title => ''), home_auth_at_provider_path(:provider => :vk) %>
