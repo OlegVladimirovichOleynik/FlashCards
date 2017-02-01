@@ -1,4 +1,4 @@
-class CardsController < ApplicationController
+class Dashboard::CardsController < ApplicationController
   before_action :find_cards, only: [:edit, :update, :destroy, :show, :simple_test]
 
   def index
@@ -16,7 +16,7 @@ class CardsController < ApplicationController
   def create
     @cards = current_user.cards.build(cards_params)
     if @cards.save
-      redirect_to @cards
+      redirect_to dashboard_cards_path
     else
       render 'new'
     end
@@ -24,7 +24,7 @@ class CardsController < ApplicationController
 
   def update
     if @cards.update(cards_params)
-      redirect_to @cards
+      redirect_to dashboard_cards_path
     else
       render 'edit'
     end
@@ -33,7 +33,7 @@ class CardsController < ApplicationController
   def destroy
     @cards.destroy
 
-    redirect_to cards_path
+    redirect_to dashboard_cards_path
   end
 
   def simple_test

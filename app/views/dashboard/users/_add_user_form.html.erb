@@ -1,4 +1,4 @@
-<%= simple_form_for @users do |f| %>
+<%= simple_form_for [:dashboard, @users] do |f| %>
   <% if @users.errors.any? %>
     <div class="error_messages">
       <h2>Form is invalid</h2>

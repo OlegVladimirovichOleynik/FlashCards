@@ -1,4 +1,4 @@
-<%= simple_form_for @cards, :html => {:multipart => true} do |f| %>
+<%= simple_form_for [:dashboard, @cards], :html => {:multipart => true} do |f| %>
   <% if @cards.errors.any? %>
     <div id="error_explanation">
       <h3>

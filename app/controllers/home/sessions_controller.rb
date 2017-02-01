@@ -1,7 +1,7 @@
-class SessionsController < ApplicationController
+class Home::SessionsController < ApplicationController
   def create
     if @user = login(params[:email], params[:password])
-      redirect_back_or_to root_url, notice: t(:logged_in)
+      redirect_back_or_to root_path, notice: t(:logged_in)
     else
       flash.now.alert = t(:logged_error)
       render :new

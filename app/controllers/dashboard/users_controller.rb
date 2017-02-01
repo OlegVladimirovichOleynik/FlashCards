@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Dashboard::UsersController < ApplicationController
   before_action :find_users, only: [:edit, :show, :update, :destroy, :current_deck]
 
   def index
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 
   def current_deck
     @users.update_attribute(:current_deck_id, params[:id])
-    redirect_to decks_path
+    redirect_to dashboard_decks_path
   end
 
   private

@@ -27,9 +27,9 @@
             <td><%= cards.original_text %></td>
             <td><%= cards.translated_text %></td>
             <td><%= cards.review_date.strftime("%d.%m.%Y") %></td>
-            <td><%= link_to t(:show), card_path(cards) %></td>
-            <td><%= link_to t(:edit), edit_card_path(cards) %></td>
-            <td><%= link_to t(:delete), card_path(cards),
+            <td><%= link_to t(:show), dashboard_card_path(cards) %></td>
+            <td><%= link_to t(:edit), edit_dashboard_card_path(cards) %></td>
+            <td><%= link_to t(:delete), dashboard_card_path(cards),
                     method: :delete,
                     data: { confirm: 'Вы уверены, что хотите удалить?' } %></td>
 

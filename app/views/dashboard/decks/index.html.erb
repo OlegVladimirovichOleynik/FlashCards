@@ -20,11 +20,11 @@
         <td></td>
         <% else %>
         <td></td>
-        <td><%= link_to t(:make_current), current_deck_user_path(decks), method: :put  %></td>
+        <td><%= link_to t(:make_current), current_deck_dashboard_user_path(decks), method: :put  %></td>
         <% end %>
-        <td><%= link_to t(:show), deck_path(decks) %></td>
-        <td><%= link_to t(:edit), edit_deck_path(decks) %></td>
-        <td><%= link_to t(:delete), deck_path(decks),
+        <td><%= link_to t(:show), dashboard_deck_path(decks) %></td>
+        <td><%= link_to t(:edit), edit_dashboard_deck_path(decks) %></td>
+        <td><%= link_to t(:delete), dashboard_deck_path(decks),
                 method: :delete,
                 data: { confirm: 'Вы уверены, что хотите удалить?' } %></td>
   	  </tr>
